@@ -1,0 +1,110 @@
+@import 'common/functions';
+@import 'common/variables';
+@import 'common/mixins';
+
+// =============================================================================
+// DARK MODE PROPERTIES
+// =============================================================================
+
+:root {
+  // === PRIMARY ===============================================================
+
+  // === BACKGROUNDS ===========================================================
+  --bg-900-free: #{hsl_code_free(216, 12, 17)};
+  --bg-1000-free: #{hsl_code_free(210, 10, 9)};
+
+  --bg-50: #{hsl_code(213, 9, 33)};
+  --bg-100: #{hsl_code(213, 9, 31)};
+  --bg-200: #{hsl_code(214, 10, 30)};
+  --bg-300: #{hsl_code(212, 10, 29)};
+  --bg-400: #{hsl_code(213, 11, 28)};
+  --bg-500: #{hsl_code(210, 11, 27)};
+  --bg-600: #{hsl_code(214, 11, 25)};
+  --bg-700: #{hsl_code(210, 10, 23)};
+  --bg-800: #{hsl_code(213, 12, 20)};
+  --bg-900: hsl(var(--bg-900-free));
+  --bg-1000: hsl(var(--bg-1000-free));
+
+  // === FOREGROUNDS ===========================================================
+  &,
+  .chapter-formatting {
+    --fg-100: #{hsl_font_code(216, 12, 89)}; // Contrast ~ 10
+    --fg-200: #{hsl_font_code(216, 12, 84)}; // Contrast ~ 8.8
+    --fg-300: #{hsl_font_code(214, 11, 79)}; // Contrast ~ 7.7
+    --fg-400: #{hsl_font_code(212, 11, 74)}; // Contrast ~ 6.7
+    --fg-500: #{hsl_font_code(213, 11, 69)}; // Contrast ~ 5.8
+    --fg-600: #{hsl_font_code(212, 11, 65)}; // Contrast ~ 5.2
+    --fg-700: #{hsl_font_code(210, 11, 61)}; // Contrast ~ 4.6
+    --fg-800: #{hsl_font_code(208, 12, 59)}; // Contrast ~ 4.3
+    --fg-900: #{hsl_font_code(206, 8, 51)}; // Contrast ~ 3.3
+    --fg-1000: #{hsl_font_code(210, 10, 8)};
+    --fg-tinted: #{hsl_font_code(212, 12, 68)}; // Contrast ~ 5.7
+  }
+
+  // === ELEVATIONS ============================================================
+  --e-body: #{hsl_code(216, 12, 12)}; // 950
+  --e-0: var(--bg-800);
+  --e-1: var(--bg-800);
+  --e-2: var(--bg-700);
+
+  // === LAYOUT ================================================================
+  --layout-main-mobile-box-shadow: none;
+  --layout-main-desktop-box-shadow: none;
+
+  // === MINIMAL ===============================================================
+  --minimal-main-box-shadow: none;
+  --minimal-container-box-shadow: none;
+
+  // === SHADOWS ===============================================================
+  --container-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 5%));
+  --figure-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 10%)) drop-shadow(0 1px 1px rgb(0 0 0 / 6%));
+  --card-image-drop-shadow: none;
+
+  // === SCOPES ================================================================
+  .header-background {
+    --layout-header-background-filter: none;
+    --layout-header-background-box-shadow: none;
+  }
+}
+
+// =============================================================================
+// LIGHT MODE PROPERTIES
+// =============================================================================
+
+:root[data-mode=light] {
+  // Only applied when the child theme is selected in the theme switcher
+  &[data-theme=default] {
+    // === ELEVATIONS ============================================================
+    --e-body: var(--bg-300);
+    --e-0: var(--bg-100);
+    --e-1: var(--bg-100);
+    --e-2: var(--bg-50);
+
+    // === NAVIGATION ============================================================
+    --navigation-background-sticky: var(--e-1);
+
+    // === COLORS - BOOKMARKS ====================================================
+    --bookmark-color-alpha: #{hsl_code(218, 11, 75)};
+  }
+}
+
+// =============================================================================
+// SETTINGS MODAL
+// =============================================================================
+
+.site-settings__polygons,
+.site-settings__background-textures {
+  display: none !important; // Not used in theme
+}
+
+// =============================================================================
+// CHAPTER
+// =============================================================================
+
+:root[data-theme=default] {
+  .progress {
+    left: 0;
+    max-width: unset;
+    transform: none
+  }
+}
