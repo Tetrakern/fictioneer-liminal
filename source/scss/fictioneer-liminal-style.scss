@@ -7,8 +7,6 @@
 // =============================================================================
 
 :root {
-  // === PRIMARY ===============================================================
-
   // === BACKGROUNDS ===========================================================
   --bg-900-free: #{hsl_code_free(216, 12, 17)};
   --bg-1000-free: #{hsl_code_free(210, 10, 9)};
@@ -50,10 +48,6 @@
   // === LAYOUT ================================================================
   --layout-main-mobile-box-shadow: none;
   --layout-main-desktop-box-shadow: none;
-
-  // === MINIMAL ===============================================================
-  --minimal-main-box-shadow: none;
-  --minimal-container-box-shadow: none;
 
   // === SHADOWS ===============================================================
   --container-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 5%));
@@ -106,5 +100,21 @@
     left: 0;
     max-width: unset;
     transform: none
+  }
+}
+
+// =============================================================================
+// MINIMALIST MODE
+// =============================================================================
+
+:root.minimal {
+  body {
+    --container-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 5%));
+    --minimal-main-box-shadow: none;
+    --minimal-container-box-shadow: none;
+  }
+
+  &:not(:fullscreen, :-webkit-full-screen) .main__background {
+    box-shadow: none;
   }
 }
