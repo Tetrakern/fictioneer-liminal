@@ -5,7 +5,7 @@
 // =============================================================================
 
 // Version of the child theme
-define( 'CHILD_VERSION', '1.0.0' );
+define( 'CHILD_VERSION', '1.0.1' );
 
 // Name of the child theme
 define( 'CHILD_NAME', 'Fictioneer Liminal' );
